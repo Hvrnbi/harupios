@@ -1,0 +1,50 @@
+:root {
+    --bg-color: #a1c6e0;
+    --txt-color: #1d4058;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    background-position-y: 10%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+div {
+    position: absolute;
+    border: solid 4px var(--bg-color);
+    border-radius: 8px;
+    padding: 8px;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: var(--bg-color);
+    color: var(--txt-color)
+}
+
+div img {
+    max-height: 40vh;
+    border-radius: 8px;
+}
+
+div p a {
+    text-decoration: underline dashed 2px;
+    color: var(--txt-color);
+}
+
+#topbar-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 1vh;
+    left: 1vh;
+    right: 1vh;
+    height: 2%;
+}
+
+#welcome-div {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
