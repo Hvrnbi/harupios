@@ -10,23 +10,37 @@ body {
     background-size: cover;
     background-position-y: 10%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 div {
     position: absolute;
-    border: solid 4px var(--bg-color);
-    border-radius: 8px;
-    padding: 8px;
-    max-width: 100%;
-    max-height: 100%;
+    border-radius: 1vh;
+    padding: 1vh;
     background-color: var(--bg-color);
     color: var(--txt-color);
     text-align: center;
 }
 
+div .header {
+    height: 3vh;
+    background-color: var(--txt-color);
+    color: var(--bg-color);
+    margin: -1vh;
+    padding: 1vh;
+    border-top-left-radius: 1vh;
+    border-top-right-radius: 1vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+}
+
 div img {
     max-height: 40vh;
-    border-radius: 8px;
+    border-radius: 1vh;
 }
 
 div a {
@@ -41,11 +55,67 @@ div a {
     top: 1vh;
     left: 1vh;
     right: 1vh;
-    height: 2%;
+    height: 3vh;
+    z-index: 1;
 }
 
-#welcome-div {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#dock-div {
+    display: flex;
+    flex-direction: column;
+    top: 16vh;
+    left: -9vh;
+    bottom: 16vh;
+    width: 8vh;
+    transition: all 1s;
+    z-index: 1;
+}
+
+#dock-div:hover {
+    left: 1vh;
+}
+
+#booklist-div {
+    max-width: 20%;
+}
+
+#current-book {
+    background-color: #dfdfdf;
+}
+
+#current-book-metadata {
+    line-height: 0;
+}
+
+#next-book-btn {
+    text-align: left;
+}
+
+#previous-book-btn {
+    text-align: right;
+}
+
+.draggable {
+    top: 20%;
+    left: 20%;
+}
+
+.hidden {
+    display: none;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.logo {
+    width: 3vh;
+}
+
+.dock-icon {
+    font-size: 6vh;
+    line-height: 0;
+}
+
+.closed {
+    filter: grayscale(100%);
 }

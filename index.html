@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <title>HarupiOS</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/booklist.js"></script>
 </head>
 <body>
     <main>
@@ -11,10 +12,21 @@
 
             <p id="date-and-time"></p>
             
-            <p id="notif-btn">🔔</p>
+            <p id="notif-btn" class="btn">🔔</p>
+        </div>
+
+        <div id="dock-div">
+            <img src="images/me.png" alt="My profile picture" id="welcome-div-open" class="btn">
+            <p id="booklist-div-open" class="dock-icon btn closed">📚️</p>
         </div>
     
-        <div id="welcome-div">
+        <div id="welcome-div" class="draggable">
+            <span id="welcome-div-header" class="header">
+                <img src="images/me.png" alt="My profile picture" class="logo">
+                <p>Welcome window</p>
+                <p id="welcome-div-close" class="btn">⨯</p>
+            </span>
+
             <h1>Welcome to my personal OS</h1>
 
             <h2>Introduction</h2>
@@ -31,6 +43,28 @@
             </figure>
 
             <p>This website is <a href="https://github.com/Hvrnbi/harupios">open-source</a>.</p>
+        </div>
+
+        <div id="booklist-div" class="draggable hidden">
+            <span id="booklist-div-header" class="header">
+                <p id="booklist-div-icon">📚️</p>
+                <p>Book list</p>
+                <p id="booklist-div-close" class="btn">⨯</p>
+            </span>
+
+            <h4>A list of the last books I've read</h4>
+
+            <section id="current-book">
+                <p id="next-book-btn" class="btn">←</p>
+                <h4 id="current-book-title"></h4>
+                <section id="current-book-metadata">
+                    <h6 id="current-book-author"></h6>
+                    <h6 id="current-book-end-date"></h6>
+                    <h6 id="current-book-publication-date"></h6>
+                </section>
+                <p id="current-book-comments"></p>
+                <p id="previous-book-btn" class="btn">→</p>
+            </section>
         </div>
     </main>
     <script src="js/script.js"></script>
