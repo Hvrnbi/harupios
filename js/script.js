@@ -75,6 +75,15 @@ function openWindow(elt) {
     topbar.style.zIndex = biggestIndex + 1;
 }
 
+// Bell
+
+var bellbtn = document.getElementById("notif-btn");
+var bellsound = new Audio("../sounds/ding.mp3");
+
+bellbtn.addEventListener("click", function() {
+    bellsound.play();
+});
+
 // Book list app
 var booktitle = document.getElementById("current-book-title");
 var bookauthor = document.getElementById("current-book-author");
