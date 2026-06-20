@@ -51,7 +51,7 @@ dragElements.forEach((element) => {
     if (document.getElementById(element.id + "-close")) {
         document.getElementById(element.id + "-close").addEventListener("click", () => {
             closeWindow(element);
-            document.getElementById(element.id + "-close").classList.add("closed");
+            document.getElementById(element.id + "-open").classList.add("closed");
         })
     }
 });
