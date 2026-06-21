@@ -23,3 +23,5 @@ You can visit this website on https://harupios.vercel.app/.
 My profile picture was made by [Wawel](https://www.instagram.com/wawell__/) 💜
 
 The background picture was taken by me. It's the "Mont Blanc".
+
+I didn't used AI in this project.
