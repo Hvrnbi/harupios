@@ -14,6 +14,10 @@ You can visit this website on https://harupios.vercel.app/.
 - A welcome window, a book list window and an about me window
 - A playable Pong game accessible by clicking 8 times on the "HarupiOS" title
 
+### Screenshot
+
+[!images/screenwhot.png]
+
 ### Credits
 
 My profile picture was made by [Wawel](https://www.instagram.com/wawell__/) 💜
