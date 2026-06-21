@@ -16,7 +16,7 @@ You can visit this website on https://harupios.vercel.app/.
 
 ### Screenshot
 
-![images/screenwhot.png]
+![Screenshot](images/screenshot.png)
 
 ### Credits
 
