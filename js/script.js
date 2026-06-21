@@ -125,3 +125,117 @@ document.getElementById("next-book-btn").addEventListener("click", nextBook);
 document.getElementById("previous-book-btn").addEventListener("click", previousBook);
 
 updateBook(currentbookid);
+
+// Super secret pong
+
+var pongscore = document.getElementById("super-secret-pong-score");
+var pongleftpaddle = document.getElementById("super-secret-pong-left-paddle");
+var pongleftpaddleoffset = - 19;
+var pongrightpaddle = document.getElementById("super-secret-pong-right-paddle");
+var pongrightpaddleoffset = - 51;
+var pongpaddlepos;
+var pongball = document.getElementById("super-secret-pong-ball");
+var pongballyoffset = -83;
+var pongballx;
+var pongballxvel;
+var pongbally;
+var pongballyvel;
+var ponginterval;
+var pongstatus = false;
+
+function pongResetScore() {
+    pongscore.textContent = "0";
+}
+
+function pongInit() {
+    pongpaddlepos = 18;
+    pongleftpaddle.style.top = "-1px";
+    pongrightpaddle.style.top = "-33px";
+    pongballx = 32;
+    pongball.style.left = "32px";
+    pongbally = 32;
+    pongball.style.top = "-51px";
+}
+
+function pongStart() {
+    pongInit();
+    pongstatus = true;
+    pongscore.textContent = "0";
+    pongballxvel = 6;
+    pongballyvel = 3;
+
+    ponginterval = setInterval(updateBall, 100);
+}
+
+function updateBall() {
+    if (0 > pongbally + pongballyvel || pongbally + pongballyvel > 196) {
+        if (pongballyvel > 0) {
+            pongballyvel = - Math.floor(Math.random() * 2) - pongballyvel;
+        } else {
+            pongballyvel = Math.floor(Math.random() * 2) - pongballyvel;
+        }
+    }
+
+    if (18 > pongballx + pongballxvel || pongballx + pongballxvel > 374) {
+        if (pongpaddlepos < pongbally + pongballyvel && pongbally + pongballyvel < pongpaddlepos + 32) {
+            if (pongballxvel > 0) {
+                pongballxvel = - Math.floor(Math.random() * 2) - pongballxvel;   
+            } else {
+                pongballxvel = Math.floor(Math.random() * 2) - pongballxvel; 
+            }
+            pongscore.textContent ++;
+        } else {
+            clearInterval(ponginterval);
+            pongstatus = false;
+            pongballx += pongballxvel;
+            pongbally += pongballyvel;
+            pongball.style.left = pongballx.toString() + "px";
+            var pongballywithoffset = pongbally + pongballyoffset;
+            pongball.style.top = pongballywithoffset.toString() + "px";
+        }
+    }
+
+    pongballx += pongballxvel;
+    pongbally += pongballyvel;
+    pongball.style.left = pongballx.toString() + "px";
+    var pongballywithoffset = pongbally + pongballyoffset;
+    pongball.style.top = pongballywithoffset.toString() + "px";
+}
+
+document.getElementById("super-secret-pong-start").addEventListener("click", pongStart);
+
+document.body.addEventListener("keydown", function(event) {
+    if (event.key == "ArrowUp" && pongstatus) {
+        if (0 < pongpaddlepos) {
+            pongpaddlepos -= 4;
+            var pongleftpaddleposwithoffset = pongpaddlepos + pongleftpaddleoffset;
+            var pongrightpaddleposwithoffset = pongpaddlepos + pongrightpaddleoffset;
+            pongleftpaddle.style.top = pongleftpaddleposwithoffset.toString() + "px";
+            pongrightpaddle.style.top = pongrightpaddleposwithoffset.toString() + "px";
+        }
+    } else if (event.key == "ArrowDown" && pongstatus) {
+        if (pongpaddlepos < 168) {
+            pongpaddlepos += 4;
+            var pongleftpaddleposwithoffset = pongpaddlepos + pongleftpaddleoffset;
+            var pongrightpaddleposwithoffset = pongpaddlepos + pongrightpaddleoffset;
+            pongleftpaddle.style.top = pongleftpaddleposwithoffset.toString() + "px";
+            pongrightpaddle.style.top = pongrightpaddleposwithoffset.toString() + "px";
+        }
+    }
+});
+
+pongInit();
+
+// Super secret button
+
+var supersecretcounter = 0;
+var pongSound = new Audio("../sounds/pong.mp3");
+
+document.getElementById("harupios-btn").addEventListener("click", function() {
+    supersecretcounter ++;
+    pongSound.play();
+    if (supersecretcounter == 8) {
+        document.getElementById("super-secret-pong-div-open").classList.remove("hidden");
+        document.getElementById("super-secret-pong-div").classList.remove("hidden");
+    }
+});

@@ -94,6 +94,43 @@ div a {
     text-align: right;
 }
 
+#super-secret-pong-game {
+    background-color: #000;
+    height: 200px;
+    width: 400px;
+    overflow: hidden;
+}
+
+#super-secret-pong-score {
+    position: relative;
+    color: #fff;
+    top: 4px;
+    right: 4px;
+    text-align: center;
+}
+
+.super-secret-pong-paddle {
+    position: relative;
+    background-color: #fff;
+    height: 32px;
+    width: 2px;
+}
+
+#super-secret-pong-left-paddle {
+    left: 16px;
+}
+
+#super-secret-pong-right-paddle {
+    left: 382px;
+}
+
+#super-secret-pong-ball {
+    position: relative;
+    background-color: #fff;
+    height: 4px;
+    width: 4px;
+}
+
 .draggable {
     top: 20%;
     left: 20%;

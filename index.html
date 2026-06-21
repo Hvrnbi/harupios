@@ -8,7 +8,7 @@
 <body>
     <main>
         <div id="topbar-div">
-            <h4>HarupiOS</h4>
+            <h4 id="harupios-btn" class="btn">HarupiOS</h4>
 
             <p id="date-and-time"></p>
             
@@ -19,6 +19,7 @@
             <img src="images/me.png" alt="My profile picture" id="welcome-div-open" class="btn">
             <p id="booklist-div-open" class="dock-icon btn closed">📚️</p>
             <p id="about-me-div-open" class="dock-icon btn closed">📃</p>
+            <p id="super-secret-pong-div-open" class="dock-icon btn hidden">🏓</p>
         </div>
     
         <div id="welcome-div" class="draggable">
@@ -87,6 +88,22 @@
                 <a href="https://bsky.app/profile/hvrupi.bsky.social" target="_blank">Bluesky</a><br>
                 <a href="mailto:hvrupi@proton.me" target="_blank">E-mail</a>
             </p>
+        </div>
+        <div id="super-secret-pong-div" class="draggable hidden">
+            <span id="super-secret-pong-div-header" class="header">
+                <p id="super-secret-pong-div-icon">🏓</p>
+                <p>Super secret Pong</p>
+                <p id="super-secret-pong-div-close" class="btn">⨯</p>
+            </span>
+            <h4>Welcome to the super secret Pong !</h4>
+            <p>Play with ↑ and ↓</p>
+            <p id="super-secret-pong-start" class="btn"><b>Start</b></p>
+            <section id="super-secret-pong-game">
+                <section id="super-secret-pong-score">0</section>
+                <section id="super-secret-pong-left-paddle" class="super-secret-pong-paddle"></section>
+                <section id="super-secret-pong-right-paddle" class="super-secret-pong-paddle"></section>
+                <section id="super-secret-pong-ball"></section>
+            </section>
         </div>
     </main>
     <script src="js/script.js"></script>
